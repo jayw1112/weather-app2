@@ -1,0 +1,24 @@
+.searchContainer {
+  padding: 2rem;
+  margin: 2rem;
+  /* font-size: 4rem; */
+}
+
+.searchContainer input {
+  /* width: 100%; */
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: var(--lightBlue);
+  color: black;
+  font-size: 1.2rem;
+}
+
+.searchContainer button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: var(--darkBlue);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
