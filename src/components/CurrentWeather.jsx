@@ -8,8 +8,8 @@ const CurrentWeather = ({ location, temp, description, humidity, icon }) => {
       <h2 className={classes.location}>{location}</h2>
       <h3>Current Weather:</h3>
       <p className={classes.temp}>{Math.round(temp)} F°</p>
-      <p className={classes.description}>{description}</p>
       <i className={getWeatherIcon(icon)}></i>
+      <p className={classes.description}>{description}</p>
       <p className={classes.humidity}>Humidity: {humidity} %</p>
     </div>
   )
