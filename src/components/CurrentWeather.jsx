@@ -10,7 +10,7 @@ const CurrentWeather = ({ location, temp, description, humidity, icon }) => {
       <p className={classes.temp}>{Math.round(temp)} F°</p>
       <i className={getWeatherIcon(icon)}></i>
       <p className={classes.description}>{description}</p>
-      <p className={classes.humidity}>Humidity: {humidity} %</p>
+      {/* <p className={classes.humidity}>Humidity: {humidity} %</p> */}
     </div>
   )
 }

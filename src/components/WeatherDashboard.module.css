@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  /* padding: 2rem; */
+  padding: 2rem;
+  width: 100%;
   max-width: 70%; /* Set a max-width to limit the container width */
   height: calc(
     100% - 4rem
@@ -16,4 +17,5 @@
   background-size: cover;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  scale: 0.9;
 }

@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 1rem;
   margin: 0.5rem;
+  scale: 0.965;
 }
 
 .forecastContainer h3 {
@@ -19,7 +22,7 @@
 }
 
 .dayContainer {
-  padding: auto 1rem;
+  padding: 0 3rem;
   box-shadow: 0 1px 3px rgba(255, 255, 255, 0.247),
     0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -28,6 +31,8 @@
 
 .dayContainer i {
   font-size: 2rem;
+  /* margin: 0 8rem; */
+  /* padding: 0 5rem; */
 }
 
 .temp {
