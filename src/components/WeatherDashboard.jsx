@@ -4,10 +4,12 @@ import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import FiveDayForecast from './FiveDayForecast'
 import { getLatLon } from '../utils/utils'
+import Loader from '../UI/Loader'
 
 const WeatherDashboard = () => {
   const [weatherData, setWeatherData] = useState(null)
   const [forecastData, setForecastData] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const fetchWeather = async (searchTerm) => {
     try {
@@ -16,12 +18,14 @@ const WeatherDashboard = () => {
       const { lat, lon } = await getLatLon(searchTerm, apiKey)
 
       if (lat && lon) {
+        setIsLoading(true)
         const weatherResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
         )
         const weatherInfo = await weatherResponse.json()
         console.log(weatherInfo)
         setWeatherData(weatherInfo)
+        setIsLoading(false)
       }
     } catch (error) {
       console.error('Error fetching weather data:', error)
@@ -35,6 +39,8 @@ const WeatherDashboard = () => {
       const { lat, lon } = await getLatLon(searchTerm, apiKey)
 
       if (lat && lon) {
+        setIsLoading(true)
+
         const weatherResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=40&appid=${apiKey}&units=imperial`
         )
@@ -47,6 +53,7 @@ const WeatherDashboard = () => {
         })
 
         setForecastData(dailyForecasts)
+        setIsLoading(false)
       }
     } catch (error) {
       console.error('Error fetching weather data:', error)
@@ -111,16 +118,22 @@ const WeatherDashboard = () => {
     <div className={classes.weatherDashboard}>
       <h1>Weather</h1>
       <SearchBar onSearch={performSearch} />
-      {weatherData && (
-        <CurrentWeather
-          location={weatherData.name}
-          temp={weatherData.main.temp}
-          description={weatherData.weather[0].description}
-          humidity={weatherData.main.humidity}
-          icon={weatherData.weather[0].icon}
-        />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          {weatherData && (
+            <CurrentWeather
+              location={weatherData.name}
+              temp={weatherData.main.temp}
+              description={weatherData.weather[0].description}
+              humidity={weatherData.main.humidity}
+              icon={weatherData.weather[0].icon}
+            />
+          )}
+          {forecastData && <FiveDayForecast forecastData={forecastData} />}
+        </>
       )}
-      {forecastData && <FiveDayForecast forecastData={forecastData} />}
     </div>
   )
 }
