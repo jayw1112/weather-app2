@@ -37,3 +37,15 @@
 .currentContainer i {
   font-size: 4rem;
 }
+
+@media (max-width: 480px) {
+  .currentContainer {
+    width: 95%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .currentContainer {
+    width: 75%;
+  }
+}

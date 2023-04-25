@@ -7,10 +7,11 @@
   padding: 2rem;
   width: 100%;
   max-width: 70%; /* Set a max-width to limit the container width */
-  height: calc(
+  min-height: calc(
     100% - 4rem
   ); /* Set the height to 100% minus 2rem for top and bottom margin */
   padding: 0;
+  box-sizing: border-box;
   background-image: url(../assets/blue-background.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -18,4 +19,17 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   scale: 0.9;
+}
+
+@media (max-width: 480px) {
+  .weatherDashboard {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .weatherDashboard {
+    max-width: 95%;
+    /* scale: 0.8; */
+  }
 }

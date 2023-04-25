@@ -1,7 +1,7 @@
 .searchContainer {
   padding: 2rem;
   margin: 1rem;
-  scale: 0.9;
+  scale: 0.87;
   /* font-size: 4rem; */
 }
 
@@ -27,4 +27,39 @@
   font-size: 1.2rem;
   /* font-family: 'Karla', sans-serif; */
   font-family: 'Nokora', sans-serif;
+}
+
+@media (max-width: 480px) {
+  .searchContainer {
+    padding: 1rem;
+    margin: 0.5rem;
+    scale: 0.85;
+  }
+
+  .searchContainer input {
+    margin: 0.5rem;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .searchContainer button {
+    width: 30%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .searchContainer {
+    padding: 1rem;
+    margin: 0.5rem;
+    scale: 0.8;
+  }
+
+  /* .searchContainer input {
+    margin: 0.2rem;
+  }
+
+  .searchContainer button {
+    width: 20%;
+  } */
 }

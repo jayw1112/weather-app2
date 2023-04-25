@@ -10,3 +10,23 @@ h1 {
   font-weight: 700;
   margin-top: 2rem;
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #root {
+    margin: -2.2rem auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  #root {
+    margin: -1.6rem auto;
+  }
+}

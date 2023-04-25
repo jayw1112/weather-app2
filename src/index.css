@@ -3,6 +3,8 @@
 :root {
   --lightBlue: #9ae1f4ab;
   --darkBlue: #1b6ba0a2;
+  /* --small: (max-width: 480px);
+  --medium: (min-width: 481px) and (max-width: 768px); */
 }
 
 html,

@@ -40,9 +40,11 @@ const WeatherDashboard = () => {
         )
         const forecastInfo = await weatherResponse.json()
         console.log(forecastInfo)
-        const dailyForecasts = forecastInfo.list.filter(
-          (_, index) => (index - 4) % 8 === 0
-        )
+        const dailyForecasts = forecastInfo.list.filter((forecast) => {
+          const date = new Date(forecast.dt * 1000)
+          const hour = date.getHours()
+          return hour >= 12 && hour <= 15 // Filter forecasts between 12 PM and 3 PM
+        })
 
         setForecastData(dailyForecasts)
       }

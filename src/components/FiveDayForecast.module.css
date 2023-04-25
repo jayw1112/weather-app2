@@ -14,10 +14,16 @@
   margin-bottom: 2rem;
 }
 
+/* .dayWrapper {
+  display: flex;
+  justify-content: center;
+} */
+
 .dayContainers {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
   width: 100%;
 }
 
@@ -48,4 +54,17 @@
 .day {
   font-size: 1.1rem;
   font-weight: 400;
+  white-space: nowrap;
+  /* overflow: hidden; */
+}
+
+@media (max-width: 480px) {
+  .forecastContainer {
+    padding: 2rem 0.5rem;
+    width: 90%;
+  }
+
+  .dayContainer {
+    padding: 0 1rem;
+  }
 }
