@@ -59,6 +59,7 @@ const WeatherDashboard = () => {
       console.error('Error fetching weather data:', error)
     }
   }
+
   const performSearch = (searchTerm) => {
     console.log(`Searching for ${searchTerm}...`)
     fetchWeather(searchTerm)

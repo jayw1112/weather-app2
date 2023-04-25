@@ -28,11 +28,11 @@ export const getLatLon = async (searchTerm, apiKey) => {
 
   if (/^\d+$/.test(searchTerm)) {
     response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/zip?zip=${searchTerm},US&appid=${apiKey}`
+      `https://api.openweathermap.org/geo/1.0/zip?zip=${searchTerm},US&appid=${apiKey}`
     )
   } else {
     response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${searchTerm}&limit=1&appid=${apiKey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${searchTerm}&limit=1&appid=${apiKey}`
     )
   }
 
