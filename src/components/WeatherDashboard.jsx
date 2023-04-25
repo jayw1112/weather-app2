@@ -23,7 +23,7 @@ const WeatherDashboard = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
         )
         const weatherInfo = await weatherResponse.json()
-        console.log(weatherInfo)
+        // console.log(weatherInfo)
         setWeatherData(weatherInfo)
         setIsLoading(false)
       }
@@ -45,7 +45,7 @@ const WeatherDashboard = () => {
           `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=40&appid=${apiKey}&units=imperial`
         )
         const forecastInfo = await weatherResponse.json()
-        console.log(forecastInfo)
+        // console.log(forecastInfo)
         const dailyForecasts = forecastInfo.list.filter((forecast) => {
           const date = new Date(forecast.dt * 1000)
           const hour = date.getHours()
@@ -83,7 +83,7 @@ const WeatherDashboard = () => {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
       )
       const weatherInfo = await weatherResponse.json()
-      console.log(weatherInfo)
+      // console.log(weatherInfo)
       setWeatherData(weatherInfo)
     } catch (error) {
       console.error('Error fetching weather data:', error)
@@ -98,7 +98,7 @@ const WeatherDashboard = () => {
         `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=40&appid=${apiKey}&units=imperial`
       )
       const forecastInfo = await weatherResponse.json()
-      console.log(forecastInfo)
+      // console.log(forecastInfo)
       const dailyForecasts = forecastInfo.list.filter((forecast) => {
         const date = new Date(forecast.dt * 1000)
         const hour = date.getHours()
